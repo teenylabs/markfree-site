@@ -66,10 +66,16 @@
   <p>Markfree requests read-only access to your Google Calendar (<code>calendar.readonly</code> scope). This access is used solely to display your existing calendar events as visual context within the extension's overlay, helping you identify your availability when selecting time slots.</p>
 
   <h2>How We Use Your Data</h2>
-  <p>Calendar data is used only to render event indicators on the Markfree overlay within your browser. We do not store, transmit, share, or sell your calendar data. All data remains on your device and is never sent to any server operated by TeenyLabs or any third party.</p>
+  <p>Calendar data is used only to render event indicators on the Markfree overlay within your browser. Markfree communicates with the Google Calendar API to fetch your event times — no personal calendar content (event titles, descriptions, or attendee names) is ever transmitted outside your browser. No data is sent to any server operated by TeenyLabs or any third party. Event times are held briefly in memory and cleared when you deactivate the extension.</p>
 
   <h2>Data Storage</h2>
-  <p>Markfree stores your selected time slots locally in your browser using Chrome's local storage API (<code>chrome.storage.local</code>). This data never leaves your device. Your Google account credentials are managed entirely by Chrome's built-in identity system and are never accessed or stored by Markfree directly.</p>
+  <p>Markfree stores the following data locally in your browser using Chrome's local storage API (<code>chrome.storage.local</code>). Nothing ever leaves your device:</p>
+  <ul>
+    <li><strong>Event time cache</strong> — start and end times only (event titles, organizer names, and IDs are deliberately stripped). Expires after 5 minutes.</li>
+    <li><strong>Timezone</strong> — your IANA timezone identifier (e.g. America/Los_Angeles). Expires after 1 hour.</li>
+    <li><strong>Selected slots</strong> — the time slots you have painted. Expires after 1 hour.</li>
+  </ul>
+  <p>Your Google account credentials are managed entirely by Chrome's built-in identity system and are never accessed or stored by Markfree directly.</p>
 
   <h2>Third-Party Services</h2>
   <p>Markfree uses the Google Calendar API to read event data. Your use of Google Calendar is governed by Google's own <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>. Markfree does not use any other third-party services, analytics, or advertising.</p>
@@ -86,10 +92,4 @@
   <p>We may update this privacy policy from time to time. Any changes will be reflected with an updated effective date. Continued use of Markfree after changes constitutes acceptance of the updated policy.</p>
 
   <h2>Contact</h2>
-  <p>If you have any questions about this privacy policy, please contact us at: <a href="mailto:support@markfree.app">support@markfree.app</a></p>
-
-  <hr>
-  <footer>© 2026 TeenyLabs, LLC. All rights reserved.</footer>
-
-</body>
-</html>
+  <p>If you have any questions about this privacy policy, please contact us at: <a href="/cdn-cgi/l/email-protection#20535550504f5254604d41524b465245450e415050"><span class="__cf_email__" data-cfemail="7d0e080d0d120f093d101c0f161b0f1818
